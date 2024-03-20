@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/cousine_bold_italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="User name"
+        android:inputType="textPassword"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/cousine_bold_italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnDemo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/imgDemo"
+        android:layout_width="300dp"
+        android:layout_height="300dp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:text=" Toan"
+        android:checked="true"
+        android:button="@drawable/check_selector"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:text="Lich su"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:text="Hoa"
+        android:layout_height="wrap_content"/>
+
+    <RadioGroup
+        android:id="@+id/rgGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rbNam"
+            android:layout_width="wrap_content"
+            android:text="name"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/rbNu"
+            android:layout_width="wrap_content"
+            android:text="nu"
+            android:layout_height="wrap_content"/>
+    </RadioGroup>
+</LinearLayout>
