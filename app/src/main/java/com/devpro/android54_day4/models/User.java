@@ -1,4 +1,4 @@
-package com.devpro.android54_day4;
+package com.devpro.android54_day4.models;
 
 public class User {
     private String userName,address, avatar;

@@ -3,19 +3,18 @@ package com.devpro.android54_day4;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.devpro.android54_day4.adapters.UserAdapter;
+import com.devpro.android54_day4.interfaces.IOnUserItemClickListener;
+import com.devpro.android54_day4.models.User;
 
 import java.util.ArrayList;
 
-public class MainActivity2 extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity implements IOnUserItemClickListener {
 
     private ListView lvDemo;
     private ArrayList<String> mColor;
@@ -40,24 +39,39 @@ public class MainActivity2 extends AppCompatActivity {
 //        lvDemo.setAdapter(arrayAdapter);
 
         mListUser = new ArrayList<>();
-        for (int i =0; i< 10; i++){
+        for (int i = 0; i < 10; i++) {
             User user = new User();
-            user.setUserName("User "+i);
-            user.setAddress("HN "+i);
+            user.setUserName("User " + i);
+            user.setAddress("HN " + i);
             user.setAvatar(MainActivity.URL);
             mListUser.add(user);
         }
 
 
-        UserAdapter userAdapter = new UserAdapter(mListUser);
+        UserAdapter userAdapter = new UserAdapter(mListUser, this);
         lvDemo.setAdapter(userAdapter);
 
         lvDemo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity2.this, "Hello "+mListUser.get(position).getUserName(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity2.this, "Hello " + mListUser.get(position).getUserName(), Toast.LENGTH_SHORT).show();
             }
         });
 
+    }
+
+    @Override
+    public void onAvatarClick(int position) {
+
+    }
+
+    @Override
+    public void onUserNameClick(int position) {
+        Toast.makeText(this, "Click user name "+mListUser.get(position).getUserName(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onAddressClick(int position) {
+        Toast.makeText(this, "Click address "+mListUser.get(position).getAddress(), Toast.LENGTH_SHORT).show();
     }
 }
